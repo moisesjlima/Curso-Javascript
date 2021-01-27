@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números com JS</title>
+    <style>
+        body{font: normal 12pt Arial; text-align: center; background: rgb(128, 168, 241);}
+        button{padding: 60px; font: normal 12pt Arial; transition: 1s; color: blue ;}
+        button:hover{background: rgb(209, 141, 155);}
+        div#resp{font: normal 12pt Arial; margin-top: 16px;}
+        div#convercoes{color: white;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Trabalhando com números</h1>
+    </header>
+
+    <section>
+        <button onclick="converte()">Converter</button>
+        <div id="resp">resposta aqui</div>
+        <div id="conversoes"></div>
+    </section>
+    
+    <script>
+       window.alert('Seja Bem Vindo(a) ao site de conversão')
+        function converte(){
+        var metro = Number.parseFloat(window.prompt('Digite uma distância em Metros (M)'))
+        var res = document.querySelector('div#resp')
+        var convert = document.querySelector('div#conversoes')
+        var quil = metro / 1000
+        var hect = metro / 100
+        var deca = metro / 10
+        var deci = metro * 10
+        var cent = metro * 100
+        var mili = metro * 1000
+        
+        res.innerHTML = `<strong>A distância de ${metro.toFixed(2).replace('.',',')} metros, corresponde a...</strong>`
+        convert.innerHTML += `<p>${quil.toFixed(3).replace('.',',')} Quilômetros (Km)</p>`
+        convert.innerHTML += `<p>${hect.toFixed(3).replace('.',',')} Hectometro (Hm)</p>`
+        convert.innerHTML += `<p>${deca.toFixed(3).replace('.',',')} Decâmetro (Dam)</p>`
+        convert.innerHTML += `<p>${deci.toFixed(3).replace('.',',')} Decimetros (dm)</p>`
+        convert.innerHTML += `<p>${cent.toFixed(3).replace('.',',')} Centímetros (cm)</p>`
+        convert.innerHTML += `<p>${mili.toFixed(3).replace('.',',')} Milímetro (mm)</p>`
+
+        }
+        
+        
+    </script>
+</body>
+</html>

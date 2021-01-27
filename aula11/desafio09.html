@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body{background-color: rgb(105, 193, 228); font: oblique 15pt normal}
+        input{width: 160px; height: 25px}
+        input#botao{height: 32px; border-radius: 6px;}
+        div#res{margin-top: 10px; color: rgb(19, 75, 179);}
+        div#img{border: 1px solid; width: 220px; height: 190px}
+    </style>
+</head>
+<body>
+    <h1>Verifica Nacionalidade</h1>
+    País que nasceu:<input type="text" id="nac" name="nac">
+    <input type="button" value="Analisar" id="botao" onclick="Mostra()">
+    <div id="res"></div>
+    <hr>
+    <h2>Praticando Interações(EventListener)</h2>
+    <div id="img"></div>
+
+    <script>
+        var nome = window.prompt('Qual seu nome?')
+        function Mostra() {
+        var texto = document.getElementById('nac')
+        var tn = String(texto.value)
+        var res = window.document.querySelector('div#res')
+        res.innerHTML = `Vivendo em ${tn}`
+
+        if (tn == 'BR' || tn == 'Brasil' || tn == 'brasil') {
+        res.innerHTML += `<p>${nome} você é <strong>Brasileiro</strong></p>` 
+        } else{
+            res.innerHTML += `<p> ${nome} você é <strong>estrangeiro</strong></p>`
+        }
+        }
+
+        var img = window.document.querySelector('div#img')
+        img.addEventListener('mouseenter', Entrou)
+        img.addEventListener('mouseout', Sair)
+        img.addEventListener('click', Clicar)
+
+        function Entrou(){
+            img.style.background = 'red'
+        }
+        function Sair(){
+            img.innerHTML = `<p>${nome} Volte aqui!!!</p>`
+        }
+        function Clicar(){
+            img.innerHTML = `<p>${nome} você Clicou</p>`
+            img.style.color = 'white'
+            img.style.background = 'blue'
+            
+        } 
+        </script>
+       
+
+</body>
+</html>

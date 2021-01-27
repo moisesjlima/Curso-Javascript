@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste do Salário</title>
+    <style>
+        body{font: 14pt oblique}
+        button{font-size: 14pt; padding: 30px;}
+        section#res{font-size: 15pt;}
+    </style>
+</head>
+<body>
+    <h1>Reajuste Salárial</h1>
+    <button onclick="Reajuste()">Reajustar Salário</button>
+    <section id="res">
+        <p>Clique no botão a cima &uparrow;</p>
+    </section>
+
+    <script>
+        function Reajuste(){
+            var res = document.querySelector('section#res')
+            var nome = prompt('Qual o nome do funcionário?')
+            var salário = Number(prompt('Sálario atual de '+nome+' é:'))
+            var porcentagem = Number(prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`))
+            var reajuste = (salário*porcentagem)/100
+            var tot = salário + reajuste
+            res.innerHTML = `<h1>${nome} recebeu um aumento salarial!</h1>`
+            res.innerHTML += `<p>O salário atual era R$${salário.toFixed(2).replace('.',',')}.</p>`
+            res.innerHTML += `<p>Com um aumento de ${porcentagem}%, o salário vai aumentar R$${reajuste.toFixed(2).replace('.',',')} no próximo mês</p>`
+            res.innerHTML += `<p>E a partir daí, ${nome} vai passar a ganhar R$${tot.toFixed(2).replace('.',',')}</p>` 
+        }
+    </script>
+    
+</body>
+</html>

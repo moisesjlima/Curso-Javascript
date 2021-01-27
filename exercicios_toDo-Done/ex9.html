@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de cliques</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+        body{font: 12pt Arial; text-align: center; background: rgb(111, 103, 223);}
+        header{padding:40px; color: white;}
+        div#conteudo{background: rgb(130, 100, 237);border: 1px solid; width: 500px; height: 500px; border-radius: 290px; margin: auto;}
+        h1{font-family:'Pacifico', cursive; font-weight: normal}
+        button{font-size: 12pt; padding: 40px; border-radius: 20px; transition: 0.5s;}
+        button:hover{background: rgb(130, 100, 237); color: white;}
+        section#resultado{padding: 70px; color: white;}
+    </style>
+</head>
+<body>
+<div id="conteudo">
+    <header>
+        <h1>Contador de cliques</h1>
+    </header>
+        <button onclick="Contador()">Começar a Contar</button>
+        <button onclick="Zera()">Zerar o contador</button>
+    <section id="resultado">
+        <p>O contador está com <mark style="background: blueviolet ; color: white;">0</mark> cliques</p>
+    </section>
+</div>
+
+    <script>
+        let res = document.getElementById('resultado')
+        let cont = 0
+        function Contador(){
+            cont++
+            res.innerHTML = `<p>O contador está com <mark style="background: blueviolet ; color: white">${cont}</mark> cliques</p>`
+        }
+        function Zera(){
+            cont = 0
+            res.innerHTML = null
+            res.innerHTML = `<p>keep counting :)</p>`
+        }
+    </script>
+
+    
+</body>
+</html>

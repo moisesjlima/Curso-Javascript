@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio002</title>
+    <style>
+        body{
+            background-color: rgb(135, 191, 224);
+            color: white;
+            font: normal 20pt Arial;
+        }
+        h1{
+            color: rgb(64, 92, 248);
+        }
+        button{
+            width: 250px;
+            height: 100px;
+            background-color: rgb(150, 190, 235);
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Desafio 002</h1>
+    <button onclick="aperta()">Click no butão</button>
+
+    <script>
+        function aperta(){
+            let nome = window.prompt("Digite seu nome: ")
+            window.alert("Olá "+nome+", bem vindo!")
+            let idade = window.prompt(`${nome} Quantos anos você tem?`)
+            alert(`Acabei de conhecer ${nome} que tem ${idade} anos! :)`)
+
+        }
+    </script>
+</body>
+</html>

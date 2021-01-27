@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicação</title>
+    <style>
+        body{font: normal 16pt arial}
+        input{width: 120px; height: 30px; padding: 10px;}
+        input#botao{height: 54px;}
+        div#resul{margin-top: 20px;}
+    </style>
+</head>
+<body>
+    <h1>Multiplicar</h1>
+    <input type="number" name="number" id="n1"> *
+    <input type="number" name="number" id="n2">
+    <input type="button" value="resultado" id="botao" onclick="multiplica()">
+    <div id="resul">Resultado da multiplicação</div>
+
+    <script>
+       var nome = window.prompt("Qual seu nome?")
+       window.confirm(`Olá ${nome}, prepara para multiplicar 2 valores? Let's go 🙃`)
+        function multiplica(){
+        let mn1 = document.getElementById('n1')
+        let mn2 = document.getElementById('n2')
+        let res = document.getElementById('resul')
+        let n1 = Number(mn1.value)
+        let n2 = Number(mn2.value)
+        let mult = n1 * n2
+        res.innerHTML =`${nome} seu resultado é <strong>${mult}</strong>`
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/cash.ico" type="image/x-icon">
+    <title>Desconto</title>
+    <style>
+        body{font: 14pt Arial;}
+        button{font-size: 14pt; padding: 30px;}
+        section{margin-top: 15px;}
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <button onclick="calcular()">Desconto</button>
+    <section id="res">
+        <p>Clique no botão acima para iniciar</p>
+    </section>
+
+    <script>
+        function calcular(){
+            var res = document.querySelector('section#res')
+            var nomeP = prompt('Qual o nome do produto?')
+            var valorP = Number(prompt('Qual o valor do produto?'))
+            var descontoP = Number(prompt(`O produto ${nomeP} custa ${valorP.toFixed(2).replace('.',',')}. Ele irá receber um desconto de:`))
+            var desconto = valorP * descontoP/100
+            res.innerHTML = `<h2>Calculando o desconto de ${descontoP}% para ${nomeP}</h2>`
+            res.innerHTML += `<p>O preço original é R$${valorP.toFixed(2).replace('.',',')}</p>`
+            res.innerHTML += `<p>Você acaba de ganhar R$${desconto} (-${descontoP}%)</p>` 
+            res.innerHTML += `<p>No fim, você vai pagar R$${valorP - desconto}, no produto ${nomeP}</p>`
+            
+        }
+    </script>
+</body>
+</html>

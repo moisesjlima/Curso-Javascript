@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interação Javascript</title>
+    <style>
+        body{
+            font: 12pt Arial;
+            background-color: cadetblue;
+        }
+        h1{
+            font: 30px Arial;
+            color: burlywood;
+        }
+        button{
+            font-size: 20px; padding: 50px;
+            color: rgb(121, 173, 241);
+        }
+    </style>
+</head>
+<body>
+    <h1>Interagindo com um botão</h1>
+    <button onclick= "funclica()">Click em mim :)</button>
+
+    <script>
+        var nome = prompt("Qual seu o seu nome: ")
+        function funclica(){
+        window.alert(`${nome} Você clicou no botão, Have a good day`)
+          
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter Temperatura</title>
+    <style>
+        body{font: 12pt Arial;}
+        button{padding: 40px;}
+        div#res{margin-top: 15px;}
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <button onclick="Converte()">Converter</button>
+    <div id="res">Clique no botão para converter &#x1F609</div>
+
+    <script>
+        function Converte(){
+            let grauC = Number(window.prompt('Digite uma temperatura em Grau Celsius (°C)')) 
+            let res = document.querySelector('div#res')
+            res.innerHTML = `<strong>A temperatura de ${grauC}, Coresponde a...</strong>`
+            let kelvin = grauC + 273.15
+            let Fahrenheit = (grauC * 9/5) + 32
+
+            res.innerHTML += `<p>${kelvin}°K (Kelvin)</p>`
+            res.innerHTML += `<p>${Fahrenheit}°F (Fahrenheit)</p>`
+
+        }
+    </script>
+</body>
+</html>

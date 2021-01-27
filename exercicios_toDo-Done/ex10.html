@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões</title>
+    <style>
+        body{font: 14pt Arial;}
+        h1{font-family:Georgia, 'Times New Roman', Times, serif;}
+        button{font-size: 14pt; border-radius: 20px;}
+        button#limpa{color: rgb(231, 109, 109);}
+    </style>
+</head>
+<body>
+    <h1>Javascript</h1>
+    <button onclick="acao1()">Ação 1</button>
+    <button onclick="acao2()">Ação 2</button>
+    <button onclick="acao3()">Ação 3</button>
+    <button onclick="acao4()">Ação 4</button>
+    <p>
+        <button onclick="limpar()" id="limpa">Limpar</button>
+    </p>
+    <p>Aqui registra os botões clicados acima</p>
+    <section id="saida">
+    </section>
+    
+    <script>
+        let saida = document.querySelector('section#saida')
+        function acao1(){
+            saida.innerHTML += `<p>Clicou no <strong>primeiro</strong> botão</p>` 
+        }
+        function acao2(){
+            saida.innerHTML += `<p>Clicou no <strong>segundo</strong> botão</p>` 
+        }
+        function acao3(){
+            saida.innerHTML += `<p>Clicou no <strong>terceiro</strong> botão</p>` 
+        }
+        function acao4(){
+            saida.innerHTML += `<p>Clicou no <strong>quarto</strong> botão</p>` 
+        }
+        function limpar(){
+            saida.innerHTML = null
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de moedas</title>
+    <style>
+        body{font: 14pt Normal; background: rgb(234, 241, 190);}
+        button{font-size: 14pt; padding: 30px; width: 180px; transition: 0.5s;}
+        button:hover{background: lightgreen;}
+        div{margin-top: 20px;}
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ &rarr; US$</h1>
+    <button onclick="Converte()">Converter</button>
+    <div id="convertido">Clima no botão acima &uarr;</div>
+
+    <script>
+        var cotDolar = Number(window.prompt('Antes de mais nada! Quanto esta a cotação do dólar atualmente?'))
+        function Converte(){
+            var res = document.getElementById('convertido')
+            var real = Number(window.prompt('Quantos R$ você tem na carteira?'))
+            var convertido = real * cotDolar 
+            var canbuy = real / cotDolar
+            res.innerHTML = `<p>Atualmente a cotação do dólar é <strong>US$${cotDolar.toFixed(2).replace('.',',')}</p>`
+            res.innerHTML += `<p>Você tem <strong>R$${real.toFixed(2).replace('.',',')}</strong> na carteira</p>`
+            res.innerHTML += `<p><mark><strong>(${real.toFixed(2).replace('.',',')})</strong></mark> esse valor em dólares americano convertido para real ficaria <strong>R$${convertido.toFixed(2).replace('.',',')}</strong></p>` 
+            res.innerHTML += `<p>Com <strong>R$${real.toFixed(2).replace('.',',')}</strong> na carteira você pode comprar <strong>${canbuy.toFixed(2).replace('.',',')}</strong> Dólares</p>`
+        }
+    </script>
+</body>
+</html>

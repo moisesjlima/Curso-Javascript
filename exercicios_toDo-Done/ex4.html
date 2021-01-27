@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados com JS</title>
+    <style>
+        body{font: 12pt Arial}
+        button{padding: 30px; font-size: 12pt;}
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com Dados v2.0</h1>
+    <button onclick="muda()">Clique para começar</button>
+    <section id="resultado">
+    <p>Aqui aparecerá o resultado...</p>
+    </section>
+
+    <script>
+        function muda(){
+            var nome = window.prompt("Qual seu nome?")
+            //document.getElementById('resultado').innerHTML = `<p>Olá <strong>${nome}!</strong> É um grande prazer te conhecer &#x270C;</p>`
+
+            let res = window.document.querySelector('section#resultado')
+            res.innerHTML = `<p>Olá <strong>${nome}!</strong> É um grande prazer te conhecer &#x270C;</p>`
+
+        }
+
+    </script>
+</body>
+</html>
