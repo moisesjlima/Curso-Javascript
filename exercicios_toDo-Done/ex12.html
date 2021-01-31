@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd or Even</title>
+    <style>
+     @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+     body{background: rgb(140, 235, 203);font: 16pt Arial; text-align: center;}
+     button{font-size: 16pt; padding: 30px; border-radius: 50px; background: rgb(217, 231, 231); transition: 0.5s;}
+     p{color: rgb(0, 153, 255);}
+     button:hover{background-color:rgb(140, 235, 203); color: rgb(0, 153, 255);}
+     h1{font-family:'Pacifico', cursive; font-weight: normal; color:rgb(0, 153, 255);}    
+    </style>
+</head>
+<body>
+    <h1>odd or even</h1>
+    <button onclick="Verify()">Clique para iniciar</button>
+    <section id="verified">
+        <p>O resultado vai aparecer aqui</p>
+    </section>
+
+    <script>
+        function Verify(){
+            var num = Number(window.prompt('Type a number:'))
+            var verified = document.getElementById('verified')
+            if(num % 2 == 0){
+                verified.innerHTML = `<p>
+                    the typed number ${num} is <strong>Even</strong>
+                </p>`
+            } else{
+                verified.innerHTML = `<p>The typed ${num} number is <strong>Odd</strong></p>`
+            }
+        }
+    </script>
+
+</body>
+</html>

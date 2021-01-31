@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Price changed</title>
+    <style>
+     @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+     body{font: 14pt Arial}
+     button{font-size: 14pt; padding: 30px; border-radius: 50px; background: rgb(217, 231, 231);}
+     h1{font-family:'Pacifico', cursive; font-weight: normal;}
+    </style>
+</head>
+<body>
+    <h1>Price Changed</h1>
+    <button onclick="verify()">Click to Verify</button>
+    <section id="result">
+        <p>Click the button above to analyze the price's change</p>
+    </section>
+
+    <script>
+        function verify(){
+            var result = document.querySelector('section#result')
+            var previousPrice = Number(prompt('What is the previous product price?'))
+            var currentPrice = Number(prompt('What is the current product price?'))
+            result.innerHTML = '<h2>Analyzing the inserted values</h2>'
+            result.innerHTML += `<p>The product cost ${previousPrice.toFixed(2).replace('.',',')} and now it costs ${currentPrice.toFixed(2).replace('.',',')}</p>`
+            var fall = previousPrice - currentPrice
+            var fallVar = fall / currentPrice * 100
+            var rise = currentPrice - previousPrice
+            var riseVar = rise/previousPrice * 100
+            if(previousPrice > currentPrice){
+                result.innerHTML += `<p>Today the product is cheaper</p>`
+                result.innerHTML += `<p>The price fallen down US$${fall.toFixed(2).replace('.',',')} comparing each other</p>`
+                result.innerHTML += `<p>A variation of ${fallVar.toFixed(2)}% down</p>`
+            } else if(currentPrice > previousPrice){
+                result.innerHTML += `<p>Today the price is more expensive</p>`
+                result.innerHTML += `<p>The price rised US$${rise.toFixed(2).replace('.',',')} comparing each other</p>`
+                result.innerHTML += `<p>A variation of ${riseVar.toFixed(2)}% up</p>`
+            }
+        
+
+        }
+    </script>
+
+</body>
+</html>
