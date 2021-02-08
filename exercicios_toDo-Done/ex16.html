@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de idade</title>
+    <style>
+        body{font: 14pt cursive; background: rgb(143, 189, 231)}
+        div#all{align-items: center; text-align: center;}
+      
+        button{padding: 30px; font-size: 14pt; background-color: rgb(223, 230, 169);}
+    </style>
+</head>
+<body>
+    <div id="all">
+    <h1>Calculando a idade</h1>
+    <button onclick="iniciar()">Iniciar</button>
+    <section id="resultado">
+        <p>Resultado...</p>
+    </section>
+    </div>
+
+    <script>
+        let out = document.querySelector('section#resultado')
+        function iniciar(){
+            let ano_nasc = window.prompt('Qual o ano do seu nascimento?')
+            let data_atual = new Date
+            let ano_atual = data_atual.getFullYear()
+            let idade = ano_atual - ano_nasc
+
+            out.innerHTML = `<p>
+                Quem nasceu em ${ano_nasc} vai completar <strong>${idade}</strong> em ${ano_atual}
+            </p>`
+
+        }
+    </script>
+</body>
+</html>

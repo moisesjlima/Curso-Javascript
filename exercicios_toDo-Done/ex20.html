@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estações no Brasil</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: 12pt Arial; background: rgb(73, 80, 87);}
+        h1{font-family: 'Pacifico', cursive; font-weight: normal; color: rgb(241, 187, 70);}
+        p{color: azure;}
+        button{font: 15pt normal; padding: 30px; border-radius: 20px; transition: 0.4s; margin-right: 5px;}
+        button:hover{background: rgb(94, 125, 226);; color: white}
+      
+        
+    </style>
+</head>
+<body>
+    <h1>Descubra a estação do ano</h1>
+    <button  onclick="estacao()">Informe o mês aqui</button>
+    <section id="res"><p>
+        Clique no botão acima para informar o mês...
+    </p></section>
+    <script>
+        function estacao(){
+            var res = document.getElementById('res')
+            var mes = prompt('Escolha o mês:')
+            var estação = ''
+            switch(mes.toLocaleUpperCase()){
+                case 'DEZEMBRO': case 'JANEIRO': case 'FEVEREIRO':
+                    estação = 'Inverno'
+                    break
+                case 'MARÇO': case 'ABRIL': case 'MAIO': 
+                    estação = 'Primavera'
+                    break
+                case 'JUNHO': case 'JULHO': case 'AGOSTO':
+                    estação = 'VERÂO'
+                    break
+                case 'SETEMBRO': case 'OUTUBRO': case 'NOVEMBRO':
+                    estação = 'Outono'
+                    break
+                default: estação = 'INVÁLIDA'
+            }
+
+            switch(mes){
+                case 1: 
+            }
+            res.innerHTML = `<p>No mês de ${mes}, a estação é ${estação}</p>`
+        }
+     
+    </script>
+</body>
+</html>

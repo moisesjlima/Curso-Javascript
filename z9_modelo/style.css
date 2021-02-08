@@ -1,0 +1,31 @@
+body{
+    background: rgb(103, 168, 230);
+    font: normal 15pt Arial;
+}
+
+header{
+    color: white;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h2{color: teal;}
+
+section{
+    background: rgb(241, 241, 222);
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.37);
+}
+
+input{border-radius: 10px; box-shadow: 2px 2px 1px 1px; background-color: rgb(114, 204, 219);}
+#botao{box-shadow: 5px 2px 0 0 ; padding: 9px; transition: 0.8s;}
+#botao:hover{color: white;}
+
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+
+}

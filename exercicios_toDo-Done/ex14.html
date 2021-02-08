@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior valor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: 12pt Arial}
+        h1{font-family: 'Pacifico', cursive; font-weight: normal;}
+        button{font: 15pt normal; padding: 30px; border-radius: 10px;}
+        
+    </style>
+</head>
+<body>
+    <h1>Interagindo com o sistema</h1>
+    <button id='but' onclick="interajir()" onmouseout="volte()">clique em mim</button>
+    <section id="res"><p>
+        Aqui irá aparecer algo
+    </p></section>
+
+    <script>
+        let but = document.getElementById('but')
+        let res = document.getElementById('res')
+        let data = new Date()
+        
+        function volte(){
+            but.innerText = 'Ei volte, clique aqui!'
+        }
+
+        function interajir(){
+            res.innerHTML =  `<p>Informações atuais <mark>${data}</mark></p>`
+        }
+        
+        
+    </script>
+</body>
+</html>

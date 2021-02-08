@@ -18,7 +18,7 @@ section{
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.37);
 }
 
-select{width: 150px}
+select{width: 150px;}
 
 footer{
     color: white;

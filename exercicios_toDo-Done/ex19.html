@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior valor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: 12pt Arial}
+        h1,h2{font-family: 'Pacifico', cursive; font-weight: normal;}
+        button{font: 15pt normal; padding: 25px; border-radius: 20px; transition: 0.4s; margin-right: 5px;}
+        button:hover{background: rgb(92, 208, 243);; color: white}       
+    </style>
+</head>
+<body>
+    <h1>Múltiplas ações</h1>
+    <button  onclick="Acoes()">Clique para iniciar</button>
+    <section id="res"><p>
+        Clique no botão acima para começar
+    </p></section>
+
+    <script>
+        var res = document.getElementById('res')
+        function Acoes(){
+            var num1 = Number(window.prompt('Primeiro valor'))
+            var num2 = Number(window.prompt('Segundo valor'))
+            var op = Number(window.prompt(`Valores informado: ${num1} e ${num2} \nO que vamos fazer? \n[1] Somar \n[2] Subtrair \n[3] Multiplicar \n[4] Dividir`))
+            var operação = ''
+            res.innerHTML = '<h2>Calculando...</h2>'
+            switch(op){
+                case 1:
+                    operação = num1+num2
+                    res.innerHTML += `<p>${num1} + ${num2} = <strong>${operação}</strong></p>`
+                    break;
+                case 2:
+                    operação = num1-num2
+                    res.innerHTML += `<p>${num1} - ${num2} = <strong>${operação}</strong></p>`
+                    break;
+                case 3:
+                    operação = num1*num2
+                    res.innerHTML += `<p>${num1} x ${num2} = <strong>${operação}</strong></p>`
+                    break;
+                case 4: 
+                    operação = num1/num2
+                    res.innerHTML += `<p>${num1} / ${num2} = <strong>${operação}</strong></p>`
+                    break;
+                default:
+                    res.innerHTML = 'Inválido'
+                    break;
+            }
+        }
+    
+    </script>
+</body>
+</html>

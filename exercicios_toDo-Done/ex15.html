@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior valor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: 12pt Arial}
+        h1{font-family: 'Pacifico', cursive; font-weight: normal; color: burlywood;}
+        button{font: 15pt normal; padding: 30px; border-radius: 20px; box-shadow: 6px 6px; transition: 1s;}
+        button:hover{background: burlywood; color: white}
+        strong{color: cadetblue;}
+        
+    </style>
+</head>
+<body>
+    <h1>Analisando data e hora do Sistema</h1>
+    <button  onclick="Analisa()">Iniciar Análise</button>
+    <section id="res"><p>
+        Aqui irá aparecer algo!
+    </p></section>
+
+    <script>
+        let res = document.getElementById('res')
+        let data = new Date()
+        let day = data.getDay()
+        let month = data.getMonth()
+        switch(month){
+            case 0:
+                month = 'Jan'
+                break;
+            case 1:
+                month = 'Fev'
+                break;
+            case 2: 
+                month = 'Mar'
+                break;
+            case 3:
+                month = 'Abr'
+                break;
+            case 4:
+                month = 'jun'
+                break;
+            default:
+                month = 'Mês não cadastrado!'
+        }
+        let year = data.getFullYear()
+        let weekday = data.getDay()
+        switch(weekday){
+            case 1:
+                weekday = 'Seg'
+                break;
+            case 2:
+                weekday = 'Ter'
+                break;
+            case 3:
+                weekday = 'Qua'
+                break;
+            case 4:
+                weekday = 'Qui'
+                break;
+            case 5:
+                weekday = 'Sex'
+                break  
+            case 6:
+                weekday = 'Sáb'   
+                break
+            case 7:
+                weekday = 'Dom'   
+        }
+        let hour = data.getHours()
+        let minutes = data.getMinutes()
+        let seconds = data.getSeconds()
+            
+        function Analisa(){
+            res.innerHTML = ''
+            res.innerHTML += `<p>Dia: <strong>${day}</strong></p>`
+            res.innerHTML += `<p>Mês: <strong>${month}</strong></p>`
+            res.innerHTML += `<p>Ano: <strong>${year}</strong></p>`
+            res.innerHTML += `<p>Dia da semana: <strong>${weekday}</strong></p>`
+            res.innerHTML += `<p>Hora <strong>${hour}</strong></p>`
+            res.innerHTML += `<p>Minutos: <strong>${minutes}</strong></p>`
+            res.innerHTML += `<p>Segundos: <strong>${seconds}</strong></p>`
+
+        }
+ 
+    </script>
+</body>
+</html>

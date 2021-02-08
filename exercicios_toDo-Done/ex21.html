@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: 12pt Arial}
+        h1,h2{font-family: 'Pacifico', cursive; font-weight: normal; color: rgb(88, 109, 228);}
+        button{font: 15pt normal; padding: 40px; border-radius: 20px; box-shadow: 2px 2px; transition: 0.4s; margin-right: 5px;}
+        button:hover{background: rgb(70, 96, 241);; color: white}
+        button#limpar:hover{background: rgb(216, 91, 91);}
+        
+    </style>
+</head>
+<body>
+    <h1>Contador</h1>
+    <button  onclick="Conta()">Clique em mim</button><button onclick="Limpa()" id="limpar">Limpar</button>
+    <section id="res"><p>
+        Clique no botão acima para contar...
+    </p></section>
+
+    <script>
+        var res = document.getElementById('res')
+        function Conta(){
+            var numFinal = Number(prompt('Você quer contar de 1 até:'))
+            if(numFinal == 0){
+                alert('Digite algum valor! considerando de 1 até 10')
+                numFinal = 10
+            }
+            res.innerHTML += `<h2>Contando de 1 ate ${numFinal}</h2>`
+            c = 1
+            while(c <= numFinal){
+                res.innerHTML += `${c} &#x1F449	`
+                c++
+                 }
+            res.innerHTML += '&#x1F6A9'
+        }
+
+        function Limpa(){
+            res.innerHTML = '<p>Clique no botão acima para contar...</p>'
+        }
+        
+
+        
+     
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior valor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: 12pt Arial}
+        h1{font-family: 'Pacifico', cursive; font-weight: normal; color: rgb(70, 201, 241);}
+        button{font: 15pt normal; padding: 30px; border-radius: 20px; box-shadow: 2px 2px; transition: 0.4s; margin-right: 5px;}
+        button:hover{background: rgb(70, 201, 241);; color: white}
+        strong{color:  rgb(70, 201, 241);}
+        
+    </style>
+</head>
+<body onload="Sortear()">
+    <h1>Tente adivinhar meu número</h1>
+    <div id="botao"><button  onclick="Adivinha()">Clique em mim</button></div>
+    <section id="res"><p>
+        Já pensei em um número entre 1 e 100
+    </p></section>
+
+    <script>
+        var res = document.getElementById('res')
+        var botao = document.getElementById('botao')
+    function Sortear(){
+        var min = 1
+        var max = 100
+        var dif = max - min
+        var aleatorio = Math.random()
+        sorteado = min + Math.trunc(dif * aleatorio)
+    }
+    function Adivinha(){
+        var jogador = Number(window.prompt('Qual seu palpite?'))
+        if(jogador < sorteado){
+            res.innerHTML +=`<p>Você digitou ${jogador}. Meu número é <strong>MAIOR!</strong></p>`
+        } else if(jogador > sorteado){
+            res.innerHTML += `<p>Você digitou ${jogador}. Meu número é <strong>MENOR!</strong></p>`
+        } else{
+            res.innerHTML += `<p><strong>PARABÉNS!</strong> Você acertou! eu pensei no valor ${sorteado}</p>`
+            botao.style.visibility = 'hidden'
+        }
+    }
+    </script>
+</body>
+</html>

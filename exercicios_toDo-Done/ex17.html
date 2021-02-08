@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior valor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: 12pt Arial}
+        h1{font-family: 'Pacifico', cursive; font-weight: normal; color: rgb(241, 167, 70);}
+        button{font: 15pt normal; padding: 30px; border-radius: 20px; box-shadow: 2px 2px; transition: 0.4s; margin-right: 5px;}
+        button:hover{background: burlywood; color: white}
+        strong{color: cadetblue;}
+        
+    </style>
+</head>
+<body>
+    <h1>Gerador de Números</h1>
+    <button  onclick="Gerar()">Clique em mim</button><button onclick="Limpa()">Limpar</button>
+    <section id="res"><p>
+        Cada clique, eu pensarei em um número entre 1 e 100
+    </p></section>
+
+    <script>
+        let res = document.getElementById('res')
+        function Gerar(){
+            var aleatorio = Number.parseInt(Math.random() * 101)
+            res.innerHTML += `<p>Acabei de pensar no número <mark>${aleatorio}</mark><p/>`
+
+        }
+        function Limpa(){
+            res.innerHTML = '<p>Cada clique, eu pensarei em um número entre 1 e 100</p>'
+        }
+    </script>
+</body>
+</html>

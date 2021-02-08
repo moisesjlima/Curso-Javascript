@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior valor</title>
+    <style>
+        body{font: 15pt Arial; background: rgba(60, 115, 235, 0.795);}
+        h1{color: whitesmoke;}
+        button{font: 15pt normal; padding: 30px; border-radius: 15px; transition: 1s;}
+        button:hover{background: rgb(71, 187, 255); color: white;}
+        section{color: rgb(250, 250, 250);}
+    </style>
+</head>
+<body>
+    <h1>Maior Valor</h1>
+    <button onclick="verify()">Clique para começar</button>
+    <section id="res"><p>
+      Resultado...
+    </p></section>
+
+    <script>
+        function verify(){
+            let n1 = window.prompt('Digite o 1° número')
+            let n2 = window.prompt('Digite o 2° Número')
+            var res = document.querySelector('section#res')
+            let vet = []
+            vet.push(Number(n1))
+            vet.push(Number(n2))
+            maior = vet[0]
+            for(let pos in vet){
+                if(vet[pos] > maior){
+                    maior = vet[pos]
+                }
+            }
+            if(vet[0] == vet[1]){
+                    res.innerHTML = `<p>Analisando ${vet[0]} e ${vet[1]}, Ambos são <strong>IGUAIS</strong></p>`
+                } else {
+                    res.innerHTML = `<p>Analisando ${vet[0]} e ${vet[1]} o maior número é ${maior}</p>`
+                }
+
+            
+        }
+    </script>
+</body>
+</html>
