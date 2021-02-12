@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: 12pt Arial}
+        h1{font-family: 'Pacifico', cursive; font-weight: normal; color: rgb(212, 99, 23);}
+        h2{font-family: 'Pacifico', cursive; font-weight: normal; color: rgb(0, 0, 0);}
+        button{font: 15pt normal; padding: 40px; border-radius: 50px; box-shadow: 2px 2px; transition: 0.4s; margin-right: 5px;}
+        button:hover{background:rgba(209, 90, 10, 0.74); color: white}
+        
+    </style>
+</head>
+<body>
+    <h1>Contando de 1 a 10 (mostrando só os pares)</h1>
+    <button  onclick="ContaMarca()">Contar de 1 a 10</button>
+    <section id="saida"><p>
+        Aperte no botão acima para contar...
+    </p></section>
+
+    <script>       
+    function ContaMarca(){
+        var res = document.querySelector('section#saida')
+        res.innerHTML += '<h2>Números pares de 1 até 10</h2>'
+        for(var c = 1; c <= 10; c += 1){
+            if(c % 2 == 0){
+            res.innerHTML += `${c} &#x1F449 `
+            }
+        }
+        res.innerHTML += `&#x1F3C1`
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: 12pt Arial}
+        h1,h2{font-family: 'Pacifico', cursive; font-weight: normal; color: #00dd00;}
+        button{font: 15pt normal; border-radius: 5px; box-shadow: 2px 2px 0 0; transition: 0.4s; margin-left: 5px;}
+        button:hover{background: rgb(0, 210, 0);; color: white}
+        section{background-color: #0b8d0ba6 ;border: 1px solid; border-radius: 60px; width: 250px; align-items: center; text-align: center; padding: 10px; color: ivory;}
+    </style>
+</head>
+<body>
+    <h1>Super Tabuada</h1>
+    <p><input type="number" name="number" id="number"><button  onclick="Tabuada()">Tabuado</button></p>
+    <section id="saida"><p>
+        Preencha acima para saber a tabuada
+    </p></section>
+
+    <script>
+        function Tabuada(){
+            let saida = document.querySelector('section#saida')
+            let num = document.querySelector('input#number')
+            let n = Number(num.value)
+            let c = 1
+            
+            saida.innerHTML = `<h2>Tabuado do ${n}</h2>`
+            do{
+                let mult = n * c
+                saida.innerHTML += `<p>${n} x ${c} = ${mult} </p>`
+                c++
+            } while(c <= 10)
+
+        }
+     
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador inteligente</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: 12pt Arial}
+        h1,h2{font-family: 'Pacifico', cursive; font-weight: normal; color: rgb(70, 158, 241);}
+        input{font: 12pt Arial;}
+        button{ margin-left: 5px;font: 15pt normal; transition: 0.4s;background: rgb(68, 161, 197); color: white;}
+        button:hover{background: rgb(88, 168, 22);; color: white}
+        
+        
+    </style>
+</head>
+<body>
+    <h1>Contagem "inteligente"</h1>
+    <p>Use qualquer valor nas caixas, simule contagens crescentes e regressivas. Use também valores negativos.</p>
+    <p>Pimeiro Valor: <input type="number" name="num1" id="num1" placeholder="Início da contagem"></p>
+    <p>Valor Final: <input type="number" name="numF" id="numF" placeholder="Fim da contagem"></p>
+    <button  onclick="Contando()">Contar</button>
+    <section id="res"><p>
+        Preencha os dados acima e aperte o botão.
+    </p></section>
+
+    <script>
+        function Contando(){
+            let num1 = document.getElementById('num1')
+            let numF = document.getElementById('numF')
+            let saída = document.getElementById('res')
+            let n1 = Number(num1.value)
+            let nF = Number(numF.value)
+                saída.innerHTML += `<h2>Contando de ${n1} ate ${nF}</h2>`
+            if(n1 == nF){
+                saída.innerHTML += `<p>Não é possível contar, pois os números são iguais<p>`}
+            if(n1 < nF){
+                alert('Contagem Crescente')
+                for(var c = n1; c <= nF; c++){
+                saída.innerHTML += `${c} &#x1F449`
+                }
+            } else if(nF < n1){
+                alert('Contagem decrescente')
+                for(var c = n1; c >= nF; c--){
+                saída.innerHTML += `${c} &#x1F449 `
+                }
+            }
+            saída.innerHTML += `&#x1F3C1`
+        }
+     
+    </script>
+</body>
+</html>

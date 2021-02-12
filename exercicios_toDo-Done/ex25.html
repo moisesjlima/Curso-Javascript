@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: 12pt Arial}
+        h1,h2{font-family: 'Pacifico', cursive; font-weight: normal; color: rgb(241, 124, 70);}
+        input{font: 12pt Arial;}
+        button{ margin-left: 5px;font: 15pt normal; transition: 0.4s;background: rgb(197, 109, 68); color: white;}
+        button:hover{background: rgb(37, 133, 42);; color: white}
+        
+        
+    </style>
+</head>
+<body>
+    <h1>Contando de 0 até um número positivo indicado</h1>
+    <p>Escolha o limite final para a contagem a partir de 0 (digite apenas números positivos)</p>
+    <p>Valor Final: <input type="number" name="txtnum" id="txtnum" placeholder="Apenas positivos"><button  onclick="Contar()">Contar</button>
+    <section id="res"><p>
+        Preencha os dados acima e aperte o botão.
+    </p></section>
+
+    <script>
+        function Contar(){
+            let num = document.getElementById('txtnum')
+            let saída = document.getElementById('res')
+            if(num.value.length == 0 || num.value < 0){
+                alert('Somente números positivos!')
+                num.focus()
+            } else{ 
+            let n = Number(num.value)
+            saída.innerHTML += `<h2>Contando de 0 até ${n}</h2>`
+            for(var c = 0; c <= n; c++){
+                saída.innerHTML += `${c} &#x1F449`
+            }
+                saída.innerHTML += `&#x1F3C1`
+            }
+        }
+     
+    </script>
+</body>
+</html>
