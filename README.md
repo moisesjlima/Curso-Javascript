@@ -1,2 +1,2 @@
 # CursoJs
-Curso feito no curso em vídeo
+Arquivos/exercícios do Curso de Javascript feito no [Curso em vídeo](https://www.cursoemvideo.com/cursos/)
